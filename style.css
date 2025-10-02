@@ -11,22 +11,37 @@ body {
 
 ul {
     display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 15px 40px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .nav-item {
-    list-style: none;
-    margin-right: 20px;
-    margin-top: 5px;
-    font-size: 18px;
-    font-weight: 500; /* fixed duplicate */
+    margin-right: 25px;
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
-    color: #262a31;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #8C3BDB;
+    text-decoration: underline;
 }
 
 img.logo {
     width: 186px;
     height: 36px;
-    margin-right: 200px;
+    margin-right: auto;
     cursor: pointer;
 }
 
@@ -37,12 +52,15 @@ img.logo {
     gap: 50px;
     padding: 80px 40px;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .student-title,
 .student-subtitle,
 .student-subsubtitle {
     color: #111827;
+    margin: 0 0 10px 0;
 }
 
 .student-title {
@@ -67,6 +85,7 @@ img.logo {
     font-size: 1rem;
     color: #374151;
     margin-top: 15px;
+    line-height: 1.6;
 }
 
 .student-image {
@@ -82,8 +101,8 @@ img.logo {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 0px;
-    padding: 5px 20px;
+    gap: 30px;
+    padding: 40px 20px;
     max-width: 1100px;
     margin: auto;
 }
@@ -91,45 +110,48 @@ img.logo {
 .box {
     flex: 1;
     background: #fff;
-    padding: 70px 80px;
+    padding: 60px 40px;
     border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
     text-align: center;
 }
 
 .about .box h2 {
-    font-size: 40px;
+    font-size: 28px;
     font-weight: 700;
     color: #000;
+    margin-bottom: 15px;
 }
 
 .about .box h3 {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 600;
     color: #5a4dff;
+    margin: 0;
 }
 
 .right {
     flex: 2;
-    margin-left: 50px;
 }
 
 .hiring-heading {
     font-size: 26px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #000;
 }
 
 .about .hiring-description {
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.7;
     color: #333;
+    margin: 0;
 }
 
 .card {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(300px, auto);
     gap: 25px;
     max-width: 1100px;
     margin: 60px auto;
@@ -137,41 +159,48 @@ img.logo {
 }
 
 .card > div {
-    padding: 25px;
+    padding: 30px;
     border-radius: 12px;
     box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+}
+
+.card > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .card-title {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     color: #000;
 }
 
 .card p {
     font-size: 15px;
-    line-height: 1.5;
+    line-height: 1.6;
     color: #333;
     flex-grow: 1;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .card img {
-    max-width: 150px;
+    max-width: 200px;
+    width: 100%;
     align-self: center;
-    margin-top: 10px;
+    margin-top: auto;
 }
 
-.card-one { background-color: #FBCFE8; }
-.card-two { background-color: #ffe5c2; }
-.card-three { background-color: #BFDBFE; }
-.card-four { background-color: #E9D5FF; }
-.card-five { background-color: #FEF08A; }
+.card-one { background-color: #fcc5e4; }
+.card-two { background-color: #fddcaf; }
+.card-three { background-color: #a8cfff; }
+.card-four { background-color: #dbb9ff; }
+.card-five { 
+    background-color: #FEF08A;
+}
 
 .Journey {
     display: flex;
@@ -180,9 +209,13 @@ img.logo {
     max-width: 1200px;
     margin: 0 auto;
     gap: 60px;
+    padding: 40px 20px;
 }
 
-.journey-left { flex: 1; padding-right: 20px; }
+.journey-left { 
+    flex: 1; 
+}
+
 .journey-right {
     flex: 1;
     display: flex;
@@ -191,10 +224,10 @@ img.logo {
 }
 
 .journey-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     line-height: 1.2;
 }
 
@@ -202,7 +235,6 @@ img.logo {
     font-size: 1rem;
     line-height: 1.7;
     color: #000000;
-    text-align: justify;
     margin-bottom: 20px;
 }
 
@@ -212,20 +244,19 @@ img.logo {
     height: auto;
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
 }
 
 .Mision-vision {
-    padding: 80px 0;
+    padding: 80px 20px;
     background-color: #f8f9fa;
     text-align: center;
 }
 
 .mission-vision-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .mission-vision-content {
@@ -234,52 +265,50 @@ img.logo {
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 .mission, .vision {
     background: white;
     border-radius: 12px;
-    padding: 30px; /* increased padding */
+    padding: 40px 30px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     flex: 1;
     max-width: 500px;
 }
 
 .mission-title, .vision-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 20px;
     color: #6851FF;
 }
 
 .mission p, .vision p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.6;
     color: #555;
-    text-align: left;
+    text-align: center;
 }
 
 .News {
-    padding: 80px 0;
+    padding: 80px 20px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     text-align: center;
 }
 
 .news-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .news-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 .news-card {
@@ -288,9 +317,11 @@ img.logo {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
 .news-card img {
@@ -302,13 +333,10 @@ img.logo {
 
 .news-card-content {
     padding: 25px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .news-card-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: #6851FF;
     margin-bottom: 15px;
@@ -318,18 +346,19 @@ img.logo {
 .news-card p {
     color: #666;
     line-height: 1.6;
-    margin-bottom: 0;
-    flex-grow: 1;
+    margin: 0;
 }
 
 .form {
-    padding: 80px 0;
+    padding: 80px 20px;
     color: black;
     text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .form-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 20px;
     color: black;
@@ -341,7 +370,7 @@ img.logo {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    opacity: 0.9;
+    line-height: 1.6;
 }
 
 form {
@@ -351,22 +380,28 @@ form {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    padding: 50px 50px; /* increased padding */
+    gap: 20px;
+    padding: 40px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
 
 .form input,
 .form textarea {
     width: 100%;
-    padding: 15px 20px;
-    border: 2px solid rgba(0,0,0,0.2);
+    padding: 15px;
+    border: 2px solid #e1e5e9;
     border-radius: 8px;
-    background: rgba(255,255,255,0.1);
+    background: white;
     color: black;
     font-size: 1rem;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+}
+
+.form input:focus,
+.form textarea:focus {
+    outline: none;
+    border-color: #4838B2;
+    box-shadow: 0 0 0 3px rgba(72, 56, 178, 0.1);
 }
 
 .form textarea {
@@ -378,44 +413,42 @@ form {
 
 .form button {
     grid-column: 1 / -1;
-    max-width: 300px;
-    margin: 20px auto 0 auto;
-    padding: 16px 20px;
+    max-width: 200px;
+    margin: 10px auto 0 auto;
+    padding: 15px 30px;
     background: #4838B2;
     color: white;
     border: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
 .form button:hover {
     background: rgb(29,0,97);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
 }
 
-/* Footer Styles */
 .footer {
     background: linear-gradient(180deg, #5a35ff 50%, #be56fa 100%);
     color: white;
-    padding: 50px 40px;
-    font-family: 'Roboto', sans-serif;
+    padding: 50px 20px 20px;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 40px;
-    width: 100%;
-    margin: 0;
-    padding-left: 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.footer-about img { width: 150px; margin-bottom: 15px; }
+.footer-about img { 
+    width: 150px; 
+    margin-bottom: 15px; 
+}
 
 .footer-about-title {
     font-size: 1rem;
@@ -428,7 +461,6 @@ form {
     font-size: 0.9rem;
     line-height: 1.6;
     color: #ddd;
-    max-width: 400px;
 }
 
 .contact-title, .social-media-title {
@@ -443,7 +475,7 @@ form {
     font-size: 0.9rem;
     color: #ddd;
     text-decoration: none;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     transition: all 0.3s ease;
 }
 
@@ -462,7 +494,10 @@ form {
     width: 100%;
     height: 1px;
     background-color: rgba(255,255,255,0.2);
-    margin: 30px 0;
+    margin: 30px 0 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .copyRight {
@@ -474,54 +509,175 @@ form {
     max-width: 1200px;
     margin: 0 auto;
     color: #ccc;
+    padding: 0 20px;
 }
 
-.copyRight div:first-child { display: flex; gap: 25px; }
+.copyRight div:first-child { 
+    display: flex; 
+    gap: 25px; 
+}
+
 .copyRight a {
     color: #ddd;
     text-decoration: none;
     font-size: 0.85rem;
 }
 
-.copyRight a:hover { text-decoration: underline; color: #fff; }
+.copyRight a:hover { 
+    text-decoration: underline; 
+    color: #fff; 
+}
 
 @media (max-width: 1200px) {
-  .student-about { flex-direction: row; gap: 30px; padding: 60px 20px; }
-  .Journey { flex-direction: column; text-align: center; gap: 40px; }
-  .Mision-vision > div { flex-direction: column; gap: 30px; }
-  .footer > div:not(.line):not(.copyRight) { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .student-about, .about, .card, .Journey, .mission-vision-content, 
+    .news-cards, .footer-content, .copyRight {
+        max-width: 95%;
+    }
+    
+    .card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card-five {
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
 }
 
 @media (max-width: 992px) {
-  ul { flex-direction: column; gap: 15px; }
-  img.logo { margin-right: 0; margin-bottom: 20px; }
-  .student-about { flex-direction: column; text-align: center; }
-  .student-title, .student-subtitle, .student-subsubtitle { font-size: 2rem; }
-  .about { flex-direction: column; gap: 30px; }
-  .Journey { flex-direction: column; padding: 60px 20px; }
-  .journey-left p { text-align: center; }
-  .news-cards { grid-template-columns: 1fr 1fr; }
-  .form form { grid-template-columns: 1fr; }
-  .footer > div:not(.line):not(.copyRight) { grid-template-columns: 1fr; }
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px 20px;
+    }
+    
+    img.logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .student-about {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+    }
+    
+    .about {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .box {
+        padding: 40px 30px;
+    }
+    
+    .mission-vision-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .mission, .vision {
+        max-width: 100%;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
 }
 
 @media (max-width: 768px) {
-  .student-title, .student-subtitle, .student-subsubtitle { font-size: 1.8rem; }
-  .student-description { max-width: 100%; font-size: 0.95rem; }
-  .card { grid-template-columns: 1fr; padding: 10px; }
-  .Journey { padding: 40px 20px; }
-  .news-cards { grid-template-columns: 1fr; }
-  .mission, .vision { max-width: 100%; }
-  .form form { grid-template-columns: 1fr; gap: 15px; }
-  .footer { flex-direction: column; align-items: center; text-align: center; }
-  .copyRight { flex-direction: column; gap: 10px; text-align: center; }
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-item {
+        margin-right: 15px;
+        font-size: 14px;
+    }
+    
+    .student-title, .student-subtitle, .student-subsubtitle {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+    
+    .card-five {
+        grid-column: 1;
+        grid-row: auto;
+    }
+    
+    .Journey {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .journey-title {
+        font-size: 1.8rem;
+    }
+    
+    .mission-vision-title, .news-title, .form-title {
+        font-size: 1.8rem;
+    }
+    
+    form {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .copyRight {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
 }
 
 @media (max-width: 576px) {
-  .student-title, .student-subtitle, .student-subsubtitle { font-size: 1.5rem; }
-  .journey-title { font-size: 2rem; }
-  .mission-vision-title, .news-title, .form-title { font-size: 2rem; }
-  .form input, .form textarea { padding: 15px 18px; font-size: 0.95rem; } 
-  .form button { padding: 14px 30px; font-size: 1rem; }
-  .footer-about img { width: 120px; }
+    .student-title, .student-subtitle, .student-subsubtitle {
+        font-size: 1.5rem;
+    }
+    
+    .box h2 {
+        font-size: 1.5rem;
+    }
+    
+    .box h3 {
+        font-size: 1.3rem;
+    }
+    
+    .card {
+        margin: 40px auto;
+    }
+    
+    .card > div {
+        padding: 20px;
+    }
+    
+    .news-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .form input, .form textarea {
+        padding: 12px 15px;
+    }
+    
+    .footer {
+        padding: 40px 15px 15px;
+    }
 }
